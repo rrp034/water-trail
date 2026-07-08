@@ -20,6 +20,7 @@ const choiceB = document.getElementById("choiceB");
 const scoreDisplay = document.getElementById("scoreValue");
 
 const truck = document.getElementById("truck");
+const roadArea = document.getElementById("road-area");
 
 const progressFill = document.getElementById("progressFill");
 
@@ -63,7 +64,7 @@ function startGame(){
 
     progressFill.style.width = "0%";
 
-    truck.style.left = "20px";
+    moveTruck();
 
     updateTimerDisplay();
 
@@ -354,12 +355,19 @@ function shuffleEvents(){
 function moveTruck(){
 
     let percent=(distance / events.length) * 100;
+    let availableWidth = roadArea.clientWidth - truck.offsetWidth - 20;
+
+    if (availableWidth < 0) {
+        availableWidth = 0;
+    }
 
     progressFill.style.width=percent+"%";
 
-    truck.style.left=(percent*7)+"px";
+    truck.style.left=((percent / 100) * availableWidth + 10) + "px";
 
 }
+
+window.addEventListener("resize", moveTruck);
 
 function makeChoice(choice) {
 
