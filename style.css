@@ -1,0 +1,602 @@
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:linear-gradient(#79c9ff,#f4f4f4);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:20px;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+
+/* Main Menu */
+
+#main-menu,
+#game-screen,
+#end-screen{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%, -50%);
+
+    z-index:1;
+
+}
+
+#main-menu{
+
+    width:min(600px, 100%);
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0px 10px 30px rgba(0,0,0,.25);
+
+}
+
+
+/* Title */
+
+h1{
+
+    font-size:60px;
+
+    color:#0099cc;
+
+    margin-bottom:10px;
+
+}
+
+
+.subtitle{
+
+    color:#555;
+
+    margin-bottom:40px;
+
+    font-size:18px;
+
+}
+
+
+/* Buttons */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-bottom:40px;
+
+}
+
+
+button{
+
+    padding:15px 35px;
+
+    font-size:20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+#playBtn{
+
+    background:#00a8e8;
+
+    color:white;
+
+}
+
+
+#playBtn:hover{
+
+    background:#0077aa;
+
+    transform:scale(1.05);
+
+}
+
+
+#exitBtn{
+
+    background:#f04e45;
+
+    color:white;
+
+}
+
+
+#exitBtn:hover{
+
+    background:#d63d35;
+
+    transform:scale(1.05);
+
+}
+
+
+/* Leaderboard */
+
+.leaderboard{
+
+    background:#f7f7f7;
+
+    border-radius:15px;
+
+    padding:20px;
+
+}
+
+
+.leaderboard h2{
+
+    margin-bottom:15px;
+
+    color:#333;
+
+}
+
+
+#scoreList{
+
+    list-style-position:inside;
+
+    font-size:20px;
+
+    line-height:2;
+
+}
+
+/* Hide sections */
+
+.hidden{
+
+    display:none;
+
+}
+
+
+/* ===========================
+        GAME SCREEN
+=========================== */
+
+#game-screen{
+
+    width:min(900px, 100%);
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+    max-height:calc(100vh - 40px);
+
+    overflow:auto;
+
+}
+
+
+/* Header */
+
+#game-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* Map */
+
+#map{
+
+    background:#dbeeff;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    text-align:center;
+
+    font-size:26px;
+
+    margin-bottom:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* Road */
+
+#road-area{
+
+    height:180px;
+
+    background:linear-gradient(#87ceeb 40%, #cfa36b 40%);
+
+    border-radius:15px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-bottom:20px;
+
+}
+
+/* Road Stripe */
+
+#road-area::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    width:8px;
+
+    height:100%;
+
+    transform:translateX(-50%);
+
+    background:repeating-linear-gradient(
+        white,
+        white 20px,
+        transparent 20px,
+        transparent 40px
+    );
+
+}
+
+
+/* Truck */
+
+#truck{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:20px;
+
+    font-size:48px;
+
+    transition:left .6s ease;
+
+}
+
+
+/* Story Box */
+
+#story-box{
+
+    background:#f5f5f5;
+
+    padding:20px;
+
+    border-radius:15px;
+
+}
+
+#event-image{
+
+    width:100%;
+
+    max-height:220px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+
+    display:block;
+
+}
+
+#story-box h2{
+
+    margin-bottom:10px;
+
+}
+
+
+/* Choice Buttons */
+
+#choices{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+#choices button{
+
+    width:220px;
+
+}
+
+#progressBar{
+
+    flex:1;
+
+    height:20px;
+
+    background:#ddd;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:#00a8e8;
+
+    transition:width .5s;
+
+}
+
+/* ==========================
+        END SCREEN
+========================== */
+
+#end-screen{
+
+    width:min(600px, 100%);
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:15px;
+
+    max-height:calc(100vh - 40px);
+
+    overflow:auto;
+
+}
+
+#end-image{
+
+    width:100%;
+
+    max-height:220px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    background:#f8f8f8;
+
+}
+
+#end-screen h1{
+
+    color:#00a8e8;
+
+    margin-bottom:0;
+
+}
+
+#end-screen h2{
+
+    margin-bottom:0;
+
+}
+
+#playerName{
+
+    width:250px;
+
+    padding:12px;
+
+    font-size:18px;
+
+    border-radius:10px;
+
+    border:2px solid #ccc;
+
+}
+
+.end-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:10px;
+
+}
+
+#end-screen button{
+
+    margin:0;
+
+    padding:15px 30px;
+
+}
+
+@media (max-width: 760px){
+
+    body{
+
+        padding:12px;
+
+    }
+
+    #main-menu,
+    #game-screen,
+    #end-screen{
+
+        padding:20px;
+
+    }
+
+    #game-header{
+
+        font-size:20px;
+
+    }
+
+    #choices,
+    .buttons,
+    .end-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    #choices button,
+    .buttons button,
+    .end-buttons button{
+
+        width:100%;
+
+    }
+
+    #road-area{
+
+        height:140px;
+
+    }
+
+    #truck{
+
+        font-size:clamp(32px, 8vw, 48px);
+
+    }
+
+    #playerName{
+
+        width:100%;
+
+        max-width:250px;
+
+    }
+
+}
+
+@media (max-width: 480px){
+
+    h1{
+
+        font-size:42px;
+
+    }
+
+    .subtitle{
+
+        font-size:16px;
+
+    }
+
+    #story-box,
+    #end-screen,
+    #main-menu,
+    #game-screen{
+
+        padding:16px;
+
+    }
+
+    #map{
+
+        font-size:20px;
+
+    }
+
+}
