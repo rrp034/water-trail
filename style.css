@@ -6,11 +6,25 @@
     box-sizing:border-box;
 }
 
+:root{
+
+    --cw-yellow:#ffc907;
+    --cw-blue:#00a8e8;
+    --cw-deep-blue:#176087;
+    --cw-coral:#f04e45;
+    --cw-sand:#f4ead8;
+    --cw-ink:#1f2a30;
+    --cw-card:#ffffff;
+
+}
+
 body{
 
     font-family:Arial, Helvetica, sans-serif;
 
-    background:linear-gradient(#79c9ff,#f4f4f4);
+    background:
+        radial-gradient(circle at top left, rgba(255,201,7,.35), transparent 26%),
+        linear-gradient(180deg, #79c9ff 0%, #dff6ff 42%, #f4ead8 100%);
 
     display:flex;
 
@@ -53,7 +67,7 @@ body{
 
     width:min(600px, 100%);
 
-    background:white;
+    background:var(--cw-card);
 
     border-radius:20px;
 
@@ -65,6 +79,84 @@ body{
 
 }
 
+.brand-lockup{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:20px;
+
+    padding:10px 16px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.9);
+
+    border:2px solid rgba(23,96,135,.08);
+
+    box-shadow:0 8px 20px rgba(23,96,135,.1);
+
+}
+
+.brand-symbol{
+
+    width:56px;
+
+    height:56px;
+
+    display:grid;
+
+    place-items:center;
+
+}
+
+.brand-logo{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+.brand-copy{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:2px;
+
+    color:var(--cw-ink);
+
+}
+
+.brand-label{
+
+    font-size:12px;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:var(--cw-deep-blue);
+
+}
+
+.brand-name{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
 
 /* Title */
 
@@ -72,7 +164,7 @@ h1{
 
     font-size:60px;
 
-    color:#0099cc;
+    color:var(--cw-blue);
 
     margin-bottom:10px;
 
@@ -81,11 +173,41 @@ h1{
 
 .subtitle{
 
-    color:#555;
+    color:#4b5b63;
 
-    margin-bottom:40px;
+    margin-bottom:24px;
 
     font-size:18px;
+
+}
+
+.mission-strip{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:32px;
+
+}
+
+.mission-strip span{
+
+    padding:8px 12px;
+
+    border-radius:999px;
+
+    background:linear-gradient(135deg, rgba(255,201,7,.2), rgba(0,168,232,.12));
+
+    color:var(--cw-ink);
+
+    font-size:14px;
+
+    font-weight:700;
 
 }
 
@@ -124,7 +246,7 @@ button{
 
 #playBtn{
 
-    background:#00a8e8;
+    background:var(--cw-blue);
 
     color:white;
 
@@ -142,7 +264,7 @@ button{
 
 #exitBtn{
 
-    background:#f04e45;
+    background:var(--cw-coral);
 
     color:white;
 
@@ -162,11 +284,13 @@ button{
 
 .leaderboard{
 
-    background:#f7f7f7;
+    background:linear-gradient(180deg, #fffef8 0%, #f7fbfd 100%);
 
     border-radius:15px;
 
     padding:20px;
+
+    border:1px solid rgba(23,96,135,.08);
 
 }
 
@@ -207,17 +331,35 @@ button{
 
     width:min(900px, 100%);
 
-    background:white;
+    background:var(--cw-card);
 
     border-radius:20px;
 
-    padding:30px;
+    padding:96px 30px 30px;
 
     box-shadow:0 10px 30px rgba(0,0,0,.3);
 
     max-height:calc(100vh - 40px);
 
     overflow:auto;
+
+}
+
+#game-logo{
+
+    position:absolute;
+
+    top:22px;
+
+    left:24px;
+
+    width:120px;
+
+    max-width:30vw;
+
+    height:auto;
+
+    object-fit:contain;
 
 }
 
@@ -239,6 +381,26 @@ button{
     font-size:24px;
 
     margin-bottom:20px;
+
+    padding-left:132px;
+
+}
+
+.header-badge{
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:rgba(255,201,7,.2);
+
+    color:var(--cw-deep-blue);
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:.04em;
 
 }
 
@@ -324,7 +486,7 @@ button{
 
     left:20px;
 
-    font-size:48px;
+    font-size:40px;
 
     transition:left .6s ease;
 
@@ -335,7 +497,7 @@ button{
 
 #story-box{
 
-    background:#f5f5f5;
+    background:linear-gradient(180deg, #f8fcff 0%, #f7f3e9 100%);
 
     padding:20px;
 
@@ -416,7 +578,7 @@ button{
 
     height:100%;
 
-    background:#00a8e8;
+    background:linear-gradient(90deg, var(--cw-yellow) 0%, var(--cw-blue) 100%);
 
     transition:width .5s;
 
@@ -430,7 +592,7 @@ button{
 
     width:min(600px, 100%);
 
-    background:white;
+    background:var(--cw-card);
 
     padding:40px;
 
@@ -451,6 +613,12 @@ button{
     max-height:calc(100vh - 40px);
 
     overflow:auto;
+
+}
+
+.compact-brand{
+
+    margin-bottom:0;
 
 }
 
@@ -480,7 +648,7 @@ button{
 
 #end-screen h1{
 
-    color:#00a8e8;
+    color:var(--cw-blue);
 
     margin-bottom:0;
 
@@ -544,6 +712,12 @@ button{
 
     }
 
+    #game-screen{
+
+        padding:84px 20px 20px;
+
+    }
+
     #game-header{
 
         font-size:20px;
@@ -551,6 +725,53 @@ button{
         justify-content:center;
 
         text-align:center;
+
+        flex-direction:column;
+
+        padding-left:0;
+
+        padding-top:56px;
+
+    }
+
+    #game-logo{
+
+        top:16px;
+
+        left:16px;
+
+        width:98px;
+
+        max-width:38vw;
+
+    }
+
+
+    .brand-lockup{
+
+        width:100%;
+
+        justify-content:center;
+
+        padding:10px 12px;
+
+    }
+
+    .brand-copy{
+
+        align-items:center;
+
+    }
+
+    .mission-strip{
+
+        margin-bottom:24px;
+
+    }
+
+    .header-badge{
+
+        width:100%;
 
     }
 
@@ -603,7 +824,7 @@ button{
 
     #truck{
 
-        font-size:clamp(32px, 8vw, 48px);
+        font-size:clamp(28px, 7vw, 36px);
 
     }
 
@@ -631,6 +852,35 @@ button{
 
     }
 
+    .brand-name{
+
+        font-size:18px;
+
+    }
+
+    .brand-label{
+
+        font-size:11px;
+
+        letter-spacing:.12em;
+
+    }
+
+    .brand-symbol{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+    .mission-strip span,
+    .header-badge{
+
+        font-size:13px;
+
+    }
+
     #story-box,
     #end-screen,
     #main-menu,
@@ -642,7 +892,15 @@ button{
 
     #game-screen{
 
+        padding:76px 16px 16px;
+
         max-height:calc(100vh - 24px);
+
+    }
+
+    #game-logo{
+
+        width:84px;
 
     }
 

@@ -11,10 +11,26 @@
     <!-- Main Menu -->
     <div id="main-menu">
 
+        <div class="brand-lockup" aria-label="charity water inspired branding">
+            <div class="brand-symbol" aria-hidden="true">
+                <img class="brand-logo" src="img/charity water logo.png" alt="" />
+            </div>
+            <div class="brand-copy">
+                <span class="brand-label">Inspired by</span>
+                <span class="brand-name">charity: water</span>
+            </div>
+        </div>
+
         <h1>💧 Water Trail</h1>
         <p class="subtitle">
             Inspired by charity: water's mission to bring clean water to everyone.
         </p>
+
+        <div class="mission-strip">
+            <span>🪣 Deliver water</span>
+            <span>💛 Build hope</span>
+            <span>🌍 Reach communities</span>
+        </div>
 
         <div class="buttons">
             <button id="playBtn">Play</button>
@@ -42,7 +58,13 @@
 
         <div id="game-screen" class="hidden">
 
+        <img
+            id="game-logo"
+            src="img/charity water logo.png"
+            alt="charity: water logo" />
+
         <header id="game-header">
+            <div class="header-badge">💛 charity: water mission</div>
             <div id="timer">
                 ⏱ Time: <span id="time">15:00</span>
             </div>
@@ -79,6 +101,15 @@
     </div>
 
     <div id="end-screen" class="hidden">
+        <div class="brand-lockup compact-brand" aria-label="charity water inspired branding">
+            <div class="brand-symbol" aria-hidden="true">
+                <img class="brand-logo" src="img/charity water logo.png" alt="" />
+            </div>
+            <div class="brand-copy">
+                <span class="brand-label">Mission complete</span>
+                <span class="brand-name">charity: water inspired</span>
+            </div>
+        </div>
         <img id="end-image" src="" alt="End screen illustration" />
         <h1 id="endTitle">You Win!</h1>
         <p id="endMessage"></p>
