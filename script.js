@@ -124,7 +124,7 @@ const events = [
     scoreSafe: 20,
     scoreRisk: 35,
     risk: 0.20,
-    image: "img/event-placeholder.svg"
+    image: "img/fallen-tree.jpg"
 }
 ];
 
