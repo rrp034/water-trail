@@ -46,29 +46,26 @@ const menuBtn = document.getElementById("menuBtn");
 
 function startGame(){
 
+    clearInterval(timer);
+
     menu.classList.add("hidden");
     game.classList.remove("hidden");
     endScreen.classList.add("hidden");
 
-    distance=0;
-
-    score=0;
-
-    shuffleEvents();
-
-    moveTruck();
-
-    loadEvent();
-
-    currentEvent = 0;
+    distance = 0;
     score = 0;
     timeRemaining = 900;
+    playerName.value = "";
+
+    shuffleEvents();
 
     scoreDisplay.textContent = score;
 
     progressFill.style.width = "0%";
 
     truck.style.left = "20px";
+
+    updateTimerDisplay();
 
     loadEvent();
 
@@ -128,8 +125,6 @@ let currentEvent;
 function loadEvent(){
 
     if(eventsRemaining.length===0){
-
-        gameWin();
 
         return;
 
@@ -233,7 +228,7 @@ function gameWin(){
         "🎉 You Found Clean Water!",
         "Congratulations! You completed your journey.",
         "#e8ffe8",
-        "img/boulder.png"
+        "img/you-win.jpg"
     );
 
 }
@@ -259,6 +254,7 @@ playAgainBtn.addEventListener("click", function(){
 menuBtn.addEventListener("click", function(){
 
     endScreen.classList.add("hidden");
+    game.classList.add("hidden");
 
     menu.classList.remove("hidden");
 
@@ -389,6 +385,14 @@ function makeChoice(choice) {
     distance++;
 
     moveTruck();
+
+    if (distance >= events.length) {
+
+        gameWin();
+
+        return;
+
+    }
 
     loadEvent();
 

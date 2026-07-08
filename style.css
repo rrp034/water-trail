@@ -341,21 +341,31 @@ button{
 
     border-radius:15px;
 
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
 }
 
 #event-image{
 
     width:100%;
 
-    max-height:220px;
+    height:clamp(180px, 30vw, 260px);
 
-    object-fit:cover;
+    object-fit:contain;
+
+    object-position:center;
 
     border-radius:12px;
 
-    margin-bottom:15px;
-
     display:block;
+
+    background:#eef7fb;
+
+    padding:10px;
 
 }
 
@@ -444,17 +454,27 @@ button{
 
 }
 
+#end-screen.hidden{
+
+    display:none;
+
+}
+
 #end-image{
 
     width:100%;
 
-    max-height:220px;
+    height:clamp(180px, 28vw, 240px);
 
     object-fit:contain;
+
+    object-position:center;
 
     border-radius:12px;
 
     background:#f8f8f8;
+
+    padding:10px;
 
 }
 
@@ -528,6 +548,10 @@ button{
 
         font-size:20px;
 
+        justify-content:center;
+
+        text-align:center;
+
     }
 
     #choices,
@@ -551,6 +575,29 @@ button{
     #road-area{
 
         height:140px;
+
+    }
+
+    #story-box{
+
+        padding:16px;
+
+    }
+
+    #event-image,
+    #end-image{
+
+        height:180px;
+
+        padding:8px;
+
+    }
+
+    #map{
+
+        font-size:20px;
+
+        justify-content:center;
 
     }
 
@@ -593,9 +640,48 @@ button{
 
     }
 
+    #game-screen{
+
+        max-height:calc(100vh - 24px);
+
+    }
+
     #map{
 
-        font-size:20px;
+        font-size:18px;
+
+        gap:10px;
+
+        padding:12px;
+
+    }
+
+    #event-image,
+    #end-image{
+
+        height:160px;
+
+    }
+
+    #story-box h2,
+    #end-screen h1,
+    #end-screen h2{
+
+        line-height:1.2;
+
+    }
+
+    #story-text,
+    #endMessage,
+    #scoreList{
+
+        font-size:16px;
+
+    }
+
+    #playerName{
+
+        font-size:16px;
 
     }
 
