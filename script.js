@@ -115,6 +115,16 @@ const events = [
     scoreRisk: 30,
     risk: 0.30,
     image: "img/broken-bridge.jpg"
+},
+{
+    title: "Fallen Tree",
+    text: "A large tree has crashed across the road and is blocking your path.",
+    optionA: "Clear a Safe Path (Lose 5 Minutes)",
+    optionB: "Squeeze Past Quickly (20% Risk)",
+    scoreSafe: 20,
+    scoreRisk: 35,
+    risk: 0.20,
+    image: "img/event-placeholder.svg"
 }
 ];
 
