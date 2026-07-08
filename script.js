@@ -249,7 +249,7 @@ function gameOver(reason) {
         "💀 Game Over",
         reason,
         "#ffe6e6",
-        "img/broken-down-truck.svg"
+        "img/car-breaks-down.jpg"
     );
 }
 
