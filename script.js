@@ -353,7 +353,7 @@ function shuffleEvents(){
 
 function moveTruck(){
 
-    let percent=(distance/6)*100;
+    let percent=(distance / events.length) * 100;
 
     progressFill.style.width=percent+"%";
 

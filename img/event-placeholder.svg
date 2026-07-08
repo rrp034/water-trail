@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder event illustration</title>
+  <desc id="desc">A simple placeholder scene for a future water trail event.</desc>
+  <rect width="800" height="480" fill="#e9f6ff"/>
+  <rect y="320" width="800" height="160" fill="#d7c19a"/>
+  <circle cx="665" cy="110" r="48" fill="#ffd166"/>
+  <path d="M110 330c70-120 140-180 230-180 92 0 147 54 212 112 52 47 101 68 138 68 44 0 82-13 110-29" fill="none" stroke="#1f7a8c" stroke-width="22" stroke-linecap="round"/>
+  <rect x="520" y="182" width="96" height="112" rx="12" fill="#ffffff" opacity="0.92"/>
+  <path d="M568 208c-18 0-32 14-32 32 0 27 32 54 32 54s32-27 32-54c0-18-14-32-32-32z" fill="#00a8e8"/>
+  <text x="400" y="82" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#176087">New Event</text>
+  <text x="400" y="122" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#356b78">Placeholder illustration</text>
+</svg>
