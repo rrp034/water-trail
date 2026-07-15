@@ -15,12 +15,13 @@
     --cw-sand:#f4ead8;
     --cw-ink:#1f2a30;
     --cw-card:#ffffff;
+    --cw-font:"Proxima Nova", "Nunito Sans", Arial, sans-serif;
 
 }
 
 body{
 
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:var(--cw-font);
 
     background:
         radial-gradient(circle at top left, rgba(255,201,7,.35), transparent 26%),
@@ -211,6 +212,42 @@ h1{
 
 }
 
+.difficulty-picker{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin:-12px 0 28px;
+
+    color:var(--cw-ink);
+
+    font-weight:700;
+
+}
+
+.difficulty-picker select{
+
+    max-width:100%;
+
+    padding:10px 12px;
+
+    border:2px solid rgba(23,96,135,.2);
+
+    border-radius:8px;
+
+    background:#fff;
+
+    color:var(--cw-ink);
+
+    font:inherit;
+
+}
+
 
 /* Buttons */
 
@@ -300,6 +337,43 @@ button{
     margin-bottom:15px;
 
     color:#333;
+
+}
+
+.charity-footer{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-top:20px;
+
+    padding-top:16px;
+
+    border-top:1px solid rgba(23,96,135,.14);
+
+}
+
+.charity-footer a{
+
+    color:var(--cw-deep-blue);
+
+    font-size:14px;
+
+    font-weight:700;
+
+    text-decoration-thickness:2px;
+
+    text-underline-offset:3px;
+
+}
+
+.charity-footer a:hover,
+.charity-footer a:focus-visible{
+
+    color:var(--cw-coral);
 
 }
 
@@ -401,6 +475,36 @@ button{
     font-weight:700;
 
     letter-spacing:.04em;
+
+}
+
+#goal{
+
+    color:var(--cw-deep-blue);
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+.milestone-message{
+
+    margin:-8px auto 16px;
+
+    padding:10px 14px;
+
+    border:1px solid rgba(0,168,232,.25);
+
+    border-radius:8px;
+
+    background:#eefaff;
+
+    color:var(--cw-deep-blue);
+
+    font-weight:800;
+
+    text-align:center;
 
 }
 
@@ -766,6 +870,28 @@ button{
     .mission-strip{
 
         margin-bottom:24px;
+
+    }
+
+    .difficulty-picker{
+
+        flex-direction:column;
+
+        gap:8px;
+
+    }
+
+    .difficulty-picker select{
+
+        width:100%;
+
+    }
+
+    .charity-footer{
+
+        flex-direction:column;
+
+        gap:10px;
 
     }
 

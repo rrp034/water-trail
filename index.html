@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Trail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,6 +35,15 @@
             <span>🌍 Reach communities</span>
         </div>
 
+        <div class="difficulty-picker">
+            <label for="difficultySelect">Difficulty</label>
+            <select id="difficultySelect">
+                <option value="easy">Easy: 20 minutes, 50 points</option>
+                <option value="normal" selected>Normal: 15 minutes, 60 points</option>
+                <option value="hard">Hard: 10 minutes, 70 points</option>
+            </select>
+        </div>
+
         <div class="buttons">
             <button id="playBtn">Play</button>
             <button id="exitBtn">Exit</button>
@@ -48,6 +60,11 @@
                     <li>---</li>
                 </ol>
             </div>
+
+        <footer class="charity-footer">
+            <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">Visit charity: water</a>
+            <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener noreferrer">Donate</a>
+        </footer>
 
         </div>
 
@@ -72,7 +89,13 @@
             <div id="score">
                 ⭐ Score: <span id="scoreValue">0</span>
             </div>
+
+            <div id="goal">
+                🎯 Goal: <span id="goalValue">60</span>
+            </div>
         </header>
+
+        <div id="milestoneMessage" class="milestone-message" role="status" aria-live="polite" hidden></div>
 
         <div id="road-area">
             <div id="truck">🚚</div>
